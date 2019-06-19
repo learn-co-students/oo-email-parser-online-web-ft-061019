@@ -8,13 +8,13 @@ class EmailParser
    attr_accessor :unformatted_emails
    
    def initialize(unformatted_emails)
-      @unformatted_emails = unformatted_emails
+      self.unformatted_emails = unformatted_emails
    end
 
    def parse
       # The parse method should out parsed_emails var which is a uniq array of emails["email@email.com", "email2@email.com"]
       #binding.pry
-      parsed_emails = @unformatted_emails.split(/([,\s][\s]|[\s])/)
+      parsed_emails = self.unformatted_emails.split(/([,\s][\s]|[\s])/)
       parsed_emails.delete_if {|element| element == ", " || element == " "}.uniq
    end
 end
